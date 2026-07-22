@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Nosso Spotify</title>
+
+  <meta name="description" content="Dediquei este site somente para você" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- ===== PLAYER / HERO ===== -->
+  <header class="player">
+
+    <nav class="topbar">
+
+      <div class="topbar__left">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+
+      <div class="topbar__center">
+        Tocando agora
+      </div>
+
+      <button class="topbar__menu" aria-label="Menu">
+        ⋯
+      </button>
+
+    </nav>
+
+    <div class="cover">
+
+      <img
+        id="coverImg"
+        src="https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=800"
+        alt="Foto do casal"
+      />
+
+      <div class="cover__shine"></div>
+
+    </div>
+
+    <div class="track">
+
+      <div class="track__info">
+
+        <h1 class="track__title" id="trackTitle">
+          Nosso Tema
+        </h1>
+
+        <p class="track__artist" id="trackArtist">
+          Eu & Você
+        </p>
+
+      </div>
+
+      <button class="like" aria-label="Curtir">
+
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 21s-7-4.35-9.5-8.5C.9 9.6 2.6 6 6 6c2 0 3.5 1 4 2 .5-1 2-2 4-2 3.4 0 5.1 3.6 3.5 6.5C19 16.65 12 21 12 21z"/>
+        </svg>
+
+      </button>
+
+    </div>
+
+    <div class="progress">
+
+      <div class="progress__bar" id="progressBar">
+        <div class="progress__fill" id="progressFill"></div>
+      </div>
+
+      <div class="progress__time">
+        <span id="timeNow">0:00</span>
+        <span id="timeEnd">0:00</span>
+      </div>
+
+    </div>
+
+    <div class="controls">
+
+      <button aria-label="Shuffle" class="ctrl ctrl--sm">
+        🔀
+      </button>
+
+      <button aria-label="Anterior" class="ctrl" id="prevBtn">
+        ⏮
+      </button>
+
+      <button aria-label="Play" class="ctrl ctrl--play" id="playBtn">
+
+        <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+
+      </button>
+
+      <button aria-label="Próxima" class="ctrl" id="nextBtn">
+        ⏭
+      </button>
+
+      <button aria-label="Repetir" class="ctrl ctrl--sm">
+        🔁
+      </button>
+
+    </div>
+
+    <!-- AUDIO -->
+    <audio id="audio" preload="metadata"></audio>
+
+    <div class="scroll-hint">
+
+      <span>desliza pra baixo</span>
+
+      <span class="scroll-hint__arrow">
+        ▾
+      </span>
+
+    </div>
+
+  </header>
+
+  <!-- ===== SOBRE O CASAL ===== -->
+  <section class="about">
+
+    <h2 class="section-title">
+      Sobre nós
+    </h2>
+
+    <div class="about__card">
+
+      <div class="about__avatars">
+
+        <img
+          src="images/her.jpg"
+          alt="Ela"
+        />
+
+        <img
+          src="images/me.jpg"
+          alt="Ele"
+        />
+
+      </div>
+
+      <h3>Sarah & Yuri</h3>
+
+      <p class="about__since">
+        Desde <strong>16 de Julho de 2026</strong>
+      </p>
+
+      <p class="about__text">
+        Tudo começou na Tribo em 13/06/2025 e desde então essa linda história vai ficando cada dia mais bonita.
+      </p>
+
+      <div class="about__stats">
+
+        <div>
+          <span id="daysTogether">0</span>
+          <small>dias juntos</small>
+        </div>
+
+        <div>
+          <span></span>
+          <small></small>
+        </div>
+
+        <div>
+          <span>1</span>
+          <small>coração</small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ===== LETRA ===== -->
+  <section class="lyrics">
+
+    <h2 class="section-title">
+      Letra
+    </h2>
+
+    <div class="lyrics__box">
+
+      <p>Se eu fechar os olhos eu te vejo</p>
+      <p>No mesmo lugar de sempre, no meu peito</p>
+      <p>O tempo passa, mas a gente fica</p>
+      <p>Como aquela música que nunca cansa</p>
+
+      <p>&nbsp;</p>
+
+      <p>Você é o refrão que eu repito</p>
+      <p>É o verso que eu não esqueço</p>
+      <p>Se a vida fosse um disco, amor</p>
+      <p>Você seria o lado A inteiro</p>
+
+    </div>
+
+  </section>
+
+  <!-- ===== RETROSPECTIVA ===== -->
+  <section class="cta">
+
+    <div class="cta__card" id="openWrapped">
+
+      <div class="cta__sticker">
+        REWIND
+      </div>
+
+      <h2>Couple Rewind</h2>
+
+      <p>
+        Nossa história em capítulos.
+        Toca pra começar.
+      </p>
+
+      <button class="cta__btn">
+        Ver retrospectiva ▶
+      </button>
+
+    </div>
+
+    <footer class="footer">
+      feito com 💚 pra você
+    </footer>
+
+  </section>
+
+  <!-- ===== OVERLAY ===== -->
+  <div class="wrapped" id="wrapped" aria-hidden="true">
+
+    <div class="wrapped__bars" id="wrappedBars"></div>
+
+    <button class="wrapped__close" id="wrappedClose">
+      ✕
+    </button>
+
+    <div class="wrapped__stage" id="wrappedStage"></div>
+
+    <button class="wrapped__tap wrapped__tap--left" id="tapLeft"></button>
+
+    <button class="wrapped__tap wrapped__tap--right" id="tapRight"></button>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
