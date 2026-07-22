@@ -1,4 +1,4 @@
-# Nosso Spotify do Amor 💚
+# Nosso Spotify 💚
 
 Página estilo Spotify para o seu namoro, com **player real**, sobre o casal, letra de música e uma **retrospectiva Couple Rewind** estilo Stories.
 
