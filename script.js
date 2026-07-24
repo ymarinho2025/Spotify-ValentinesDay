@@ -127,17 +127,8 @@ const REWIND_SLIDES = [
   cls: 'r-chapter',
   chapter: 'Capítulo 4',
   title: 'nova caminhada juntos',
-  text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.',
+  text: 'Vou deixar esse aqui reservado para Sabádo 😜',
   photo: 'images/photo4.png',
-},
-
-{
-  type: 'chapter',
-  cls: 'r-chapter',
-  chapter: 'Capítulo 5',
-  title: 'Dia de jogos',
-  text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.',
-  photo: 'images/photo5.png',
 },
   {
     type: 'final',
