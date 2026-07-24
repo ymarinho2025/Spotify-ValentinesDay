@@ -23,6 +23,7 @@ const PLAYLIST = [
 Aí eu tenho você só pra mim
 Roubo teu sono, quero teu tudo
 Se mais alguém vier não vou notar
+
 Preciso de você pra me fazer feliz
 Não quero mais ficar aqui
 Preciso me ver só pra me fazer maior
@@ -59,7 +60,7 @@ I found you`
     artist: "Goo Goo Dolls",
     cover: "https://imgs.search.brave.com/ejqq7lbynewS2VPT3jrjUCNjL5dGmPIt6h_ZvVh-PwQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLmRp/c2NvZ3MuY29tL2I0/QlNKclJEbzBJQ21L/VG5hOTR0a003Zk9v/cEdtSVdaY1o0WV9O/RVdHZ3cvcnM6Zml0/L2c6c20vcTo0MC9o/OjMwMC93OjMwMC9j/ek02THk5a2FYTmpi/MmR6L0xXUmhkR0Zp/WVhObExXbHQvWVdk/bGN5OVNMVEUxT0Rj/MC9OVE01TFRFMU9U/a3pPRGswL01UUXRN/alE1TWk1cWNHVm4u/anBlZw",
     text: `And I'd give up forever to touch you
-'Cause I know that you feel me somehow
+Cause I know that you feel me somehow
 You're the closest to heaven that I'll ever be
 And I don't wanna go home right now`
   },
