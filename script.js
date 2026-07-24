@@ -19,70 +19,49 @@ const PLAYLIST = [
     title: "Mais Ninguém",
     artist: "Banda do mar",
     cover: "https://imgs.search.brave.com/ALi6ooIDqd-mN5WTcVrYYVvdrtWvyteZ7NyAAwTjxlw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pMS5z/bmRjZG4uY29tL2Fy/dHdvcmtzLTAwMDEw/MjM1NzQ5MC1hMmR5/amctdDEwODB4MTA4/MC5qcGc",
-    text: `Lorem ipsum dolor sit amet consectetur adipiscing elit. 
-    Quisque faucibus ex sapien vitae pellentesque sem placerat. 
-    In id cursus mi pretium tellus duis convallis. 
-    Tempus leo eu aenean sed diam urna tempor. 
-    Pulvinar vivamus fringilla lacus nec metus bibendum egestas. 
-    Iaculis massa nisl malesuada lacinia integer nunc posuere. 
-    Ut hendrerit semper vel class aptent taciti sociosqu. 
-    Ad litora torquent per conubia nostra inceptos himenaeos. `
+    text: `Eu só espero que não venha mais ninguém
+Aí eu tenho você só pra mim
+Roubo teu sono, quero teu tudo
+Se mais alguém vier não vou notar
+Preciso de você pra me fazer feliz
+Não quero mais ficar aqui
+Preciso me ver só pra me fazer maior
+Mas quando você vem, eu fico melhor`
   },
   {
     src: "music/Esperando Na Janela - Cogumelo Plutão (youtube).mp3",
     title: "Esperando Na Janela",
     artist: "Cogumelo Plutão",
     cover: "https://imgs.search.brave.com/SmnwyO_RmHO1eOI11fQ-Ta62CMEAx52-IPRsD9u3KZo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMucW9idXouY29t/L2ltYWdlcy9jb3Zl/cnMvZ2MvdGgvaWh4/ZzBjNHBsdGhnY182/MDAuanBn",
-    text: `Lorem ipsum dolor sit amet consectetur adipiscing elit. 
-    Quisque faucibus ex sapien vitae pellentesque sem placerat. 
-    In id cursus mi pretium tellus duis convallis. 
-    Tempus leo eu aenean sed diam urna tempor. 
-    Pulvinar vivamus fringilla lacus nec metus bibendum egestas. 
-    Iaculis massa nisl malesuada lacinia integer nunc posuere. 
-    Ut hendrerit semper vel class aptent taciti sociosqu. 
-    Ad litora torquent per conubia nostra inceptos himenaeos. `
-  },
-  {
-    src: "music/Goo Goo Dolls – Iris [Official Music Video] [4K Remaster] - Goo Goo Dolls (youtube).mp3",
-    title: "The Reason",
-    artist: "Hoobastank",
-    cover: "https://imgs.search.brave.com/mUBRi96r6uDRd3MXKBEl2lJcYhdKwFolMjxAtC5tnOw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLmRp/c2NvZ3MuY29tLzhV/NzNTWU1Ic3RnU2RK/LXhiY1Q4ZnNwMi1f/QXpXdTNmYTNRdl9C/Y1BTWFUvcnM6Zml0/L2c6c20vcTo0MC9o/OjMwMC93OjMwMC9j/ek02THk5a2FYTmpi/MmR6L0xXUmhkR0Zp/WVhObExXbHQvWVdk/bGN5OVNMVFEzT1RV/MC9NakF0TVRReU5E/TTFOVFUzL055MDRN/RE0wTG1wd1pXYy5q/cGVn",
-    text: `Lorem ipsum dolor sit amet consectetur adipiscing elit. 
-    Quisque faucibus ex sapien vitae pellentesque sem placerat. 
-    In id cursus mi pretium tellus duis convallis. 
-    Tempus leo eu aenean sed diam urna tempor. 
-    Pulvinar vivamus fringilla lacus nec metus bibendum egestas. 
-    Iaculis massa nisl malesuada lacinia integer nunc posuere. 
-    Ut hendrerit semper vel class aptent taciti sociosqu. 
-    Ad litora torquent per conubia nostra inceptos himenaeos. `
+    text: `Você é a escada da minha subida
+Você é o amor da minha vida
+É o meu abrir de olhos no amanhecer
+Verdade que me leva a viver
+
+Você é a espera na janela
+A ave que vem de longe tão bela
+A esperança que arde em calor
+Você é a tradução do que é o amor `
   },
     {
     src: "music/Stephen Sanchez - Until I Found You (Official Video) - StephenSanchezVEVO (youtube).mp3",
     title: "Until I Found You",
     artist: "Stephen Sanchez",
     cover: "https://imgs.search.brave.com/pVB2syOTIc1Z4tGP-2soAW8UYHMP4hP-lVebfF0h68E/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLmRp/c2NvZ3MuY29tL28y/MWVYRFBQY1BRNy12/cURtVTg5WEJHUEN1/ajRjQmpNVG9nTUIz/dWRKMHMvcnM6Zml0/L2c6c20vcTo0MC9o/OjMwMC93OjMwMC9j/ek02THk5a2FYTmpi/MmR6L0xXUmhkR0Zp/WVhObExXbHQvWVdk/bGN5OVNMVEkxTVRn/NC9OalV5TFRFM016/RXdOemc0L056UXRP/VGt4TVM1d2JtYy5q/cGVn",
-    text: `Lorem ipsum dolor sit amet consectetur adipiscing elit. 
-    Quisque faucibus ex sapien vitae pellentesque sem placerat. 
-    In id cursus mi pretium tellus duis convallis. 
-    Tempus leo eu aenean sed diam urna tempor. 
-    Pulvinar vivamus fringilla lacus nec metus bibendum egestas. 
-    Iaculis massa nisl malesuada lacinia integer nunc posuere. 
-    Ut hendrerit semper vel class aptent taciti sociosqu. 
-    Ad litora torquent per conubia nostra inceptos himenaeos. `
+    text: `I would never fall in love again until I found her
+I said I would never fall unless it's you I fall into
+I was lost within the darkness, but then I found her
+I found you`
   },
   {
     src: "music/Goo Goo Dolls – Iris [Official Music Video] [4K Remaster] - Goo Goo Dolls (youtube).mp3",
     title: "Iris",
     artist: "Goo Goo Dolls",
     cover: "https://imgs.search.brave.com/ejqq7lbynewS2VPT3jrjUCNjL5dGmPIt6h_ZvVh-PwQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLmRp/c2NvZ3MuY29tL2I0/QlNKclJEbzBJQ21L/VG5hOTR0a003Zk9v/cEdtSVdaY1o0WV9O/RVdHZ3cvcnM6Zml0/L2c6c20vcTo0MC9o/OjMwMC93OjMwMC9j/ek02THk5a2FYTmpi/MmR6L0xXUmhkR0Zp/WVhObExXbHQvWVdk/bGN5OVNMVEUxT0Rj/MC9OVE01TFRFMU9U/a3pPRGswL01UUXRN/alE1TWk1cWNHVm4u/anBlZw",
-    text: `Lorem ipsum dolor sit amet consectetur adipiscing elit. 
-    Quisque faucibus ex sapien vitae pellentesque sem placerat. 
-    In id cursus mi pretium tellus duis convallis. 
-    Tempus leo eu aenean sed diam urna tempor. 
-    Pulvinar vivamus fringilla lacus nec metus bibendum egestas. 
-    Iaculis massa nisl malesuada lacinia integer nunc posuere. 
-    Ut hendrerit semper vel class aptent taciti sociosqu. 
-    Ad litora torquent per conubia nostra inceptos himenaeos. `
+    text: `And I'd give up forever to touch you
+'Cause I know that you feel me somehow
+You're the closest to heaven that I'll ever be
+And I don't wanna go home right now`
   },
 ];
 
@@ -120,7 +99,7 @@ const REWIND_SLIDES = [
   cls: 'r-chapter',
   chapter: 'Capítulo 1',
   title: 'Gincana',
-  text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.',
+  text: 'Foi na gincana que pudemos nos aproximar ainda mais. Eu não estava tão animado para participar, até perceber que seria uma oportunidade de nos vermos e conversarmos.',
   photo: 'images/photo1.jpg',
 },
 
@@ -129,7 +108,7 @@ const REWIND_SLIDES = [
   cls: 'r-chapter',
   chapter: 'Capítulo 2',
   title: 'Primeiro encontro',
-  text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.',
+  text: 'Passamos nosso primeiro final de semana inteiro juntos. Entre conversas, risadas e momentos simples, criamos lembranças que levaremos para sempre em nossos corações.',
   photo: 'images/photo2.jpg',
 },
 
@@ -138,7 +117,7 @@ const REWIND_SLIDES = [
   cls: 'r-chapter',
   chapter: 'Capítulo 3',
   title: 'Ultimo dia antes das ferias',
-  text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.',
+  text: 'Foi na saida da aula que dei um passo importante. A amizade se transformou oficialmente em namoro e iniciamos uma nova caminhada juntos.',
   photo: 'images/photo3.png',
 },
 
