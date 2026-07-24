@@ -6,6 +6,9 @@ const COUPLE = {
   startDate: '2026-07-16',
   firstMet: '2026-06-13',
   names: 'Sarah & Yuri',
+
+  // Texto exibido no último slide da retrospectiva.
+  finalMessage: 'Nossa história só está começando ✨',
 };
 
 /* ============================================================
@@ -132,10 +135,11 @@ const REWIND_SLIDES = [
 },
   {
     type: 'final',
-    cls: 'r-final',
-    eyebrow: 'Nossa história continua',
-    title: 'E ainda estamos no começo…',
+    cls: 'r-final r-final--hours',
+    eyebrow: 'Horas juntos',
+    title: '',
     counter: true,
+    message: COUPLE.finalMessage,
   },
 ];
 
@@ -144,6 +148,17 @@ const SLIDE_DURATION = 6000;
 /* ============================================================
    CONTADORES
 ============================================================ */
+
+
+function hoursTogether() {
+  const start = new Date(`${COUPLE.startDate}T00:00:00`);
+  const now = new Date();
+
+  return Math.max(
+    0,
+    Math.floor((now - start) / (1000 * 60 * 60))
+  );
+}
 
 function daysTogether() {
   const start = new Date(COUPLE.startDate);
@@ -385,26 +400,30 @@ function daysSinceMet() {
 
       case 'final':
         inner = `
-          <p class="r__eyebrow">${slide.eyebrow || ''}</p>
-          <h2 class="r__title">${slide.title || ''}</h2>
+          <div class="r-final__particles" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
 
-          ${
-            slide.counter
-              ? `
-            <div class="r-counter">
-              <span class="r-counter__num" data-counter-together>0</span>
-              <span class="r-counter__label">dias juntos</span>
-            </div>
+          <div class="r-final__ribbon r-final__ribbon--top" aria-hidden="true"></div>
 
-            <div class="r-counter">
-              <span class="r-counter__num" data-counter-met>0</span>
-              <span class="r-counter__label">dias desde que se conheceram</span>
-            </div>
-          `
-              : ''
-          }
+          <div class="r-final__content">
+            <p class="r-final__label">${slide.eyebrow || ''}</p>
 
-          <p class="r__sub">${COUPLE.names}</p>
+            ${
+              slide.counter
+                ? `
+              <div class="r-final__hours">
+                <span class="r-final__number" data-counter-hours>0</span>
+              </div>
+            `
+                : ''
+            }
+
+            <p class="r-final__message">${slide.message || ''}</p>
+            <p class="r-final__names">${COUPLE.names}</p>
+          </div>
+
+          <div class="r-final__ribbon r-final__ribbon--bottom" aria-hidden="true"></div>
         `;
         break;
     }
@@ -479,6 +498,7 @@ function daysSinceMet() {
 
     const counterTogether = slides[number].querySelector('[data-counter-together]');
     const counterMet = slides[number].querySelector('[data-counter-met]');
+    const counterHours = slides[number].querySelector('[data-counter-hours]');
 
     if (counterTogether) {
       animateCounter(counterTogether, daysTogether());
@@ -486,6 +506,10 @@ function daysSinceMet() {
 
     if (counterMet) {
       animateCounter(counterMet, daysSinceMet());
+    }
+
+    if (counterHours) {
+      animateCounter(counterHours, hoursTogether());
     }
 
     clearTimeout(timeoutId);

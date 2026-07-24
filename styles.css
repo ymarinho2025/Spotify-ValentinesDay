@@ -424,3 +424,140 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 
   .lyrics__box { font-size: 22px; }
 }
+
+
+/* ===== SLIDE FINAL — HORAS JUNTOS ===== */
+.r-final--hours {
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 22% 30%, rgba(255, 214, 0, .12) 0 3px, transparent 4px),
+    radial-gradient(circle at 82% 55%, rgba(255, 214, 0, .16) 0 4px, transparent 5px),
+    radial-gradient(circle at 44% 76%, rgba(255, 214, 0, .10) 0 3px, transparent 4px),
+    #000;
+}
+
+.r-final__content {
+  position: relative;
+  z-index: 3;
+  width: min(92%, 720px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.r-final__label {
+  font-size: clamp(22px, 5.5vw, 34px);
+  font-weight: 500;
+  letter-spacing: -.4px;
+}
+
+.r-final__hours {
+  margin-top: 22px;
+  line-height: .88;
+}
+
+.r-final__number {
+  display: block;
+  font-size: clamp(76px, 22vw, 160px);
+  font-weight: 900;
+  letter-spacing: clamp(-8px, -1.2vw, -2px);
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 10px 45px rgba(255,255,255,.08);
+}
+
+.r-final__message {
+  margin-top: 30px;
+  max-width: 30ch;
+  font-size: clamp(18px, 4.6vw, 28px);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.r-final__names {
+  margin-top: 18px;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: .72;
+}
+
+.r-final__ribbon {
+  position: absolute;
+  left: -4%;
+  width: 108%;
+  height: clamp(110px, 21vh, 210px);
+  z-index: 1;
+  opacity: .98;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #ffe600 0 7.4%,
+      #ffc800 7.4% 14.8%
+    );
+  filter: drop-shadow(0 12px 18px rgba(255, 210, 0, .18));
+}
+
+.r-final__ribbon::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 -30px 0;
+  height: 48px;
+  background:
+    linear-gradient(135deg, #ffc800 25%, transparent 25%) 0 0 / 80px 48px repeat-x;
+}
+
+.r-final__ribbon--top {
+  top: -28px;
+  transform: rotate(1.5deg);
+  -webkit-mask-image: linear-gradient(to bottom, #000 15%, rgba(0,0,0,.95) 55%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 15%, rgba(0,0,0,.95) 55%, transparent 100%);
+}
+
+.r-final__ribbon--bottom {
+  bottom: -38px;
+  transform: rotate(-1.8deg) scaleY(-1);
+  -webkit-mask-image: linear-gradient(to bottom, #000 15%, rgba(0,0,0,.95) 55%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 15%, rgba(0,0,0,.95) 55%, transparent 100%);
+}
+
+.r-final__particles {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.r-final__particles span {
+  position: absolute;
+  width: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #ffd400;
+  opacity: .22;
+  box-shadow: 0 0 18px rgba(255, 212, 0, .45);
+  animation: finalParticle 5s ease-in-out infinite;
+}
+
+.r-final__particles span:nth-child(1) { left: 12%; top: 31%; animation-delay: -.8s; }
+.r-final__particles span:nth-child(2) { left: 29%; top: 22%; width: 5px; animation-delay: -2.1s; }
+.r-final__particles span:nth-child(3) { right: 12%; top: 44%; width: 6px; animation-delay: -3.2s; }
+.r-final__particles span:nth-child(4) { left: 42%; bottom: 19%; width: 5px; animation-delay: -1.6s; }
+.r-final__particles span:nth-child(5) { right: 29%; bottom: 25%; width: 9px; animation-delay: -4.1s; }
+
+@keyframes finalParticle {
+  0%, 100% { transform: translateY(0) scale(.9); opacity: .15; }
+  50% { transform: translateY(-18px) scale(1.15); opacity: .38; }
+}
+
+@media (max-height: 680px) {
+  .r-final__number { font-size: clamp(68px, 20vw, 120px); }
+  .r-final__message { margin-top: 18px; }
+  .r-final__ribbon { height: 100px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .r-final__particles span { animation: none; }
+}
