@@ -137,7 +137,7 @@ const REWIND_SLIDES = [
   cls: 'r-chapter',
   chapter: 'Capítulo 5',
   title: 'Cinema',
-  text: 'Descrições por Amore Mio/Sarah 😜',
+  text: 'Ao lado da minha Mary Jane. Mas, diferente do Peter Parker, essa história não vai acabar. 😜❤️',
   photo: 'images/photo5.jpg',
 },
 {
