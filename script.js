@@ -1,8 +1,9 @@
+(async function(){
 /* ============================================================
    PERSONALIZE AQUI
 ============================================================ */
 
-const COUPLE = {
+let COUPLE = {
   startDate: '2026-07-16',
   firstMet: '2026-06-13',
   names: 'Sarah & Yuri',
@@ -73,7 +74,7 @@ And I don't wanna go home right now`
    COUPLE REWIND
 ============================================================ */
 
-const REWIND_SLIDES = [
+let REWIND_SLIDES = [
   {
     type: 'cover',
     cls: 'r-cover',
@@ -159,6 +160,44 @@ const REWIND_SLIDES = [
 ];
 
 const SLIDE_DURATION = 6000;
+
+async function applyDatabaseContent() {
+  try {
+    const response = await fetch('/api/couple-public.php', { cache: 'no-store' });
+    if (!response.ok) return;
+    const data = await response.json();
+    if (!data.ok || !data.settings) return;
+    const s = data.settings;
+    COUPLE = {
+      ...COUPLE,
+      names: s.names || COUPLE.names,
+      startDate: s.start_date || COUPLE.startDate,
+      firstMet: s.first_met || COUPLE.firstMet,
+      finalMessage: s.final_message || COUPLE.finalMessage,
+    };
+    const chapters = (data.chapters || []).map((c) => ({
+      type: 'chapter', cls: 'r-chapter', chapter: c.chapter_label || '',
+      title: c.title || '', text: c.description || '', photo: c.photo || ''
+    }));
+    if (chapters.length) {
+      REWIND_SLIDES = [
+        {type:'cover',cls:'r-cover',eyebrow:'A nossa retrospectiva',title:'Couple\nRewind',sub:COUPLE.names},
+        {type:'season',cls:'r-season',eyebrow:'Nossa Musica',title:'"Mais Ninguém"',sub:'',icon:'🎵'},
+        ...chapters,
+        {type:'final',cls:'r-final r-final--hours',eyebrow:'Horas juntos',title:'',counter:true,message:COUPLE.finalMessage}
+      ];
+    }
+    const names = document.getElementById('coupleNames'); if (names) names.textContent = COUPLE.names;
+    const about = document.getElementById('aboutText'); if (about && s.about_text) about.textContent = s.about_text;
+    const since = document.getElementById('coupleSince');
+    if (since && COUPLE.startDate) {
+      const [y,m,d] = COUPLE.startDate.split('-').map(Number);
+      since.textContent = new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'long',year:'numeric'}).format(new Date(y,m-1,d));
+    }
+  } catch (e) { console.warn('Conteúdo dinâmico indisponível; usando versão local.', e); }
+}
+
+await applyDatabaseContent();
 
 /* ============================================================
    CONTADORES
@@ -579,4 +618,5 @@ function daysSinceMet() {
       close();
     }
   });
+})();
 })();
