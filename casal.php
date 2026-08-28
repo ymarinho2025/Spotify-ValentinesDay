@@ -85,7 +85,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
 }
 
 $defaults=['id'=>1,'names'=>'Sarah & Yuri','start_date'=>'2026-07-16','first_met'=>'2026-06-13','about_text'=>'','final_message'=>'Nossa história só está começando ✨','avatar_her_id'=>null,'avatar_me_id'=>null];
-$row=$pdo->query('SELECT * FROM couple_settings WHERE id=1')->fetch(PDO::FETCH_ASSOC); $settings=array_merge($defaults,$row?:[]);
+$row=$pdo->query('SELECT id,names,start_date,first_met,about_text,final_message,avatar_her_id,avatar_me_id,seed_version,updated_by,updated_at FROM couple_settings WHERE id=1')->fetch(PDO::FETCH_ASSOC); $settings=array_merge($defaults,$row?:[]);
 $chapters=$pdo->query('SELECT c.*,i.display_name image_name FROM couple_chapters c LEFT JOIN couple_images i ON i.id=c.image_id ORDER BY c.sort_order,c.id')->fetchAll(PDO::FETCH_ASSOC);
 $users=$pdo->query('SELECT id,name,email,created_at FROM couple_users ORDER BY id')->fetchAll(PDO::FETCH_ASSOC);
 $userCount=count($users);
