@@ -189,6 +189,8 @@ async function applyDatabaseContent() {
     }
     const names = document.getElementById('coupleNames'); if (names) names.textContent = COUPLE.names;
     const about = document.getElementById('aboutText'); if (about && s.about_text) about.textContent = s.about_text;
+    const avatarHer = document.getElementById('avatarHer'); if (avatarHer && s.avatar_her) avatarHer.src = s.avatar_her;
+    const avatarMe = document.getElementById('avatarMe'); if (avatarMe && s.avatar_me) avatarMe.src = s.avatar_me;
     const since = document.getElementById('coupleSince');
     if (since && COUPLE.startDate) {
       const [y,m,d] = COUPLE.startDate.split('-').map(Number);

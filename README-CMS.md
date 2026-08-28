@@ -1,19 +1,34 @@
-# Spotify-ValentinesDay + Login Casal
+# Couple CMS v2
 
-## O que foi adicionado
-- Site público continua em `index.html`.
-- `login-casal.php`: acesso privado do casal.
-- `casal.php`: painel para editar nomes, datas, texto Sobre nós, mensagem final, capítulos, descrições e fotos.
-- Fotos novas são validadas e salvas em Base64 no PostgreSQL/NeonDB.
-- `api/couple-public.php`: entrega o conteúdo publicado ao site.
-- `api/couple-image.php`: entrega as imagens do banco.
-- autenticação com senha segura, cookie JWT assinado, CSRF e auditoria.
+## Fluxo
+- Página pública continua em `/`.
+- Coração abre `/login-casal.php`.
+- Primeiro usuário é criado em `/setup-casal.php`.
+- No painel, `Convidar parceiro(a)` gera um link válido por 7 dias.
+- O link abre `/convite-casal.php?token=...` e cria somente a segunda conta.
+- O banco bloqueia uma terceira conta.
 
-## Configuração
-1. Crie um banco PostgreSQL/NeonDB.
-2. Configure `DATABASE_URL` e `JWT_SECRET` no ambiente (veja `.env.example`).
-3. Abra `/setup-casal.php` uma única vez. O sistema cria o primeiro usuário e importa o conteúdo atual como seed.
-4. Depois use `/login-casal.php`.
+## Conteúdo original
+A migração v2 reconhece e disponibiliza no painel:
+- Sarah & Yuri
+- 16/07/2026 (início do namoro)
+- 13/06/2026 (quando se conheceram)
+- texto original de “Sobre nós”
+- mensagem final
+- avatares `her.jpg` e `me.jpg`
+- Tribo / `photo.jpg`
+- Gincana / `photo1.jpg`
+- Primeiro encontro / `photo2.jpg`
+- Passeando com a cara metade / `photo3.jpg`
+- Final de semana juntos / `photo4.jpg`
+- Cinema / `photo5.jpg`
+- TE AMO SARAH / `photo6.jpg`
 
-## Observação de deploy
-O projeto agora precisa de hospedagem com PHP 8+ e PostgreSQL. No Vercel, use um runtime PHP compatível com as rotas PHP do projeto, ou mantenha o mesmo padrão de runtime PHP usado no InvestigationZ.
+A migração é feita apenas uma vez (`seed_version=2`). O botão “Restaurar itens originais faltantes” permite repetir conscientemente a verificação.
+
+## Banco
+Variáveis Vercel:
+- `DATABASE_URL`
+- `JWT_SECRET` (32+ caracteres)
+
+Fotos novas enviadas pelo painel são armazenadas em Base64 no PostgreSQL/NeonDB. As imagens originais continuam referenciando os arquivos locais até serem substituídas, evitando enviar vários megabytes ao banco durante o primeiro acesso.

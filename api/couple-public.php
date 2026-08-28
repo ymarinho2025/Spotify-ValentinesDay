@@ -1,3 +1,14 @@
 <?php
-require_once dirname(__DIR__).'/config/database.php';header('Content-Type:application/json; charset=utf-8');header('Cache-Control:no-store');
-try{$pdo=db();$pdo->exec(file_get_contents(dirname(__DIR__).'/sql/schema.sql'));$s=$pdo->query('SELECT names,start_date,first_met,about_text,final_message FROM couple_settings WHERE id=1');$settings=$s->fetch();if(!$settings){echo json_encode(['ok'=>false,'empty'=>true]);exit;}$q=$pdo->query("SELECT c.id,c.sort_order,c.chapter_label,c.title,c.description,c.active,i.id image_id,i.source_type,i.local_path FROM couple_chapters c LEFT JOIN couple_images i ON i.id=c.image_id WHERE c.active=TRUE ORDER BY c.sort_order,c.id");$chap=[];foreach($q as $r){$r['photo']=$r['image_id']?('/api/couple-image.php?id='.$r['image_id']):'';$chap[]=$r;}echo json_encode(['ok'=>true,'settings'=>$settings,'chapters'=>$chap],JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);}catch(Throwable $e){http_response_code(500);echo json_encode(['ok'=>false,'error'=>'Banco indisponível']);}
+require_once dirname(__DIR__).'/config/database.php';
+header('Content-Type:application/json; charset=utf-8'); header('Cache-Control:no-store');
+try{
+  $pdo=db(); $pdo->exec(file_get_contents(dirname(__DIR__).'/sql/schema.sql'));
+  $s=$pdo->query('SELECT names,start_date,first_met,about_text,final_message,avatar_her_id,avatar_me_id FROM couple_settings WHERE id=1');
+  $settings=$s->fetch(PDO::FETCH_ASSOC);
+  if(!$settings){echo json_encode(['ok'=>false,'empty'=>true]);exit;}
+  $settings['avatar_her']=$settings['avatar_her_id']?('/api/couple-image.php?id='.$settings['avatar_her_id']):'images/her.jpg';
+  $settings['avatar_me']=$settings['avatar_me_id']?('/api/couple-image.php?id='.$settings['avatar_me_id']):'images/me.jpg';
+  $q=$pdo->query("SELECT c.id,c.sort_order,c.chapter_label,c.title,c.description,c.active,i.id image_id FROM couple_chapters c LEFT JOIN couple_images i ON i.id=c.image_id WHERE c.active=TRUE ORDER BY c.sort_order,c.id");
+  $chap=[]; foreach($q as $r){$r['photo']=$r['image_id']?('/api/couple-image.php?id='.$r['image_id']):'';$chap[]=$r;}
+  echo json_encode(['ok'=>true,'settings'=>$settings,'chapters'=>$chap],JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}catch(Throwable $e){http_response_code(500);echo json_encode(['ok'=>false,'error'=>'Banco indisponível']);}
