@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once __DIR__.'/config/auth.php';
 $pdo=db();
 $pdo->exec(file_get_contents(__DIR__.'/sql/schema.sql'));

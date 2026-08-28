@@ -1,5 +1,4 @@
-<?php
-session_start();require_once __DIR__.'/config/auth.php';
+<?phprequire_once __DIR__.'/config/auth.php';
 $dbError='';$err='';
 try{$pdo=db();$pdo->exec(file_get_contents(__DIR__.'/sql/schema.sql'));$count=(int)$pdo->query('SELECT COUNT(*) FROM couple_users')->fetchColumn();if($count===0){header('Location:/setup-casal.php');exit;}if(current_user($pdo)){header('Location:/casal.php');exit;}}catch(Throwable $e){$dbError=$e->getMessage();}
 if(isset($_GET['logout'])){clear_cookie();header('Location:/login-casal.php');exit;}
